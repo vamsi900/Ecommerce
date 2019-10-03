@@ -1,11 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Ecommerce</a>
 
-  <div class="searchContainer">
+  <!-- <div class="searchContainer">
     <i class="fa fa-search searchIcon"></i>
     <input class="searchBox" type="search" name="search" placeholder="Search..." autocomplete="off">
     <input type="submit" value="Search" class="searchButton">
-  </div>
+  </div> -->
+
+  <!-- <button (click)="openCart()">
+      <badge *ngIf="cart.length > 0"> {{cart.length}}<badge>
+      <icon name="cart" slot="icon-only"></icon>
+  </button> -->
+  <button type="button" (click)="openCart()" class="btn btn-primary">Cart
+    <span *ngIf="cart.length > 0" class="badge badge-light">{{cart.length}}</span>
+  </button>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

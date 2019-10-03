@@ -1,0 +1,19 @@
+<div *ngIf="selection">
+
+    <img src="{{selection.img}}">
+    
+    <b>{{selection.Name}}</b>
+    <li>{{selection.RAM}}GB RAM</li>
+    <li>{{selection.Primary_Camera}}MP Primary Camera</li>
+    <li>{{selection.Secondary_Camera}}MP secondary Camera</li>
+    <li>{{selection.ROM}}GB ROM</li>
+    <li>{{selection.Battery}}mAh Battery</li>
+    <li>{{selection.Screen}} inch screen</li>
+    <li>{{selection.Display}} Display</li>
+    <li>Qualcomm Snapdragon {{selection.Processor}} Processor</li>
+    <li>{{selection.Warranty}} year(s) Warranty</li>
+    <li>{{selection.Price}}</li>
+</div>
+
+<button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
+<button class="btn btn-danger">Buy Now</button>

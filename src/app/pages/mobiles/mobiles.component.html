@@ -54,8 +54,8 @@
             
             <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword; let in = index" (click)="chooseMobile(mobile)">
                 <div class="row">
-                    <span *ngFor="let images of mobile.images">
-                        <img src="{{images.img}}">
+                    <span *ngFor="let image of mobile.images">
+                        <img src="{{image.img}}">
                     </span>
                     
                     <ul>

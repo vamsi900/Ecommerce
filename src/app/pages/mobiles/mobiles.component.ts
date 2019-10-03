@@ -19,7 +19,7 @@ export class MobilesComponent implements OnInit {
 
   chooseMobile(mobile) {
     this.mobileService.setSelection(mobile);
-    this.router.navigate(['']);
+    this.router.navigate(['mobiles-details']);
   }
 
   lowtohigh(){

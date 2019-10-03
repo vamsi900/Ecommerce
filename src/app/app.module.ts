@@ -22,6 +22,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SearchPipe } from './search.pipe';
+import { MobilesDetailsComponent } from './pages/mobiles-details/mobiles-details.component';
+import { ClothingDetailsComponent } from './pages/clothing-details/clothing-details.component';
+import { GroceriesDetailsComponent } from './pages/groceries-details/groceries-details.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { SearchPipe } from './search.pipe';
     OfferZoneComponent,
     HomeFurnitureComponent,
     HomeAppliancesComponent,
-    SearchPipe
+    SearchPipe,
+    MobilesDetailsComponent,
+    ClothingDetailsComponent,
+    GroceriesDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
