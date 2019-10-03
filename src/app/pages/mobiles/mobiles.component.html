@@ -1,0 +1,78 @@
+<!-- <div class=""> -->
+    <div class="row justify-content-center">
+        <div class="col-lg-2 d-flex flex-column">
+                <input class="searchBox" type="search" name="search" placeholder="Search..." [(ngModel)]="searchKeyword" autocomplete="off">
+            <mat-accordion multi="true">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            RAM
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <mat-checkbox class="col-12">3 GB</mat-checkbox>
+                        <mat-checkbox class="col-12">4 GB</mat-checkbox>
+                        <mat-checkbox class="col-12">6 GB</mat-checkbox>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            BRAND
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        <mat-checkbox class="col-12">OnePlus</mat-checkbox>
+                        <mat-checkbox class="col-12">Realme</mat-checkbox>
+                        <mat-checkbox class="col-12">Redmi</mat-checkbox>
+                        <mat-checkbox class="col-12">Xiaomi</mat-checkbox>
+                    </div>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            BATTERY CAPACITY
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-checkbox>3000 - 4000 mAh</mat-checkbox>
+                    <mat-checkbox>4000 - 5000 mAh</mat-checkbox>
+                    <mat-checkbox>5000 mAh & Above</mat-checkbox>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-lg-8">
+            <div class="card" style="padding-bottom: 0px;">
+                <div class="row">
+                    <h6 style="margin-bottom: 0px;margin-left: 5px;">Sort By</h6>
+                    <p style="margin-bottom: 0px;margin-left: 25px;" class="relevance">Relevance</p>
+                    <p style="margin-bottom: 0px;margin-left: 25px;" class="lowtohigh" (click)="lowtohigh()">Price -- Low to High</p>
+                    <p style="margin-bottom: 0px;margin-left: 25px;" class="hightolow" (click)="hightolow()">Price -- High to Low</p>
+                </div>
+            </div>
+            
+            <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword; let in = index" (click)="chooseMobile(mobile)">
+                <div class="row">
+                    <span *ngFor="let images of mobile.images">
+                        <img src="{{images.img}}">
+                    </span>
+                    
+                    <ul>
+                    <b>{{mobile.Name}}</b>
+                    <li>{{mobile.RAM}}GB RAM</li>
+                    <li>{{mobile.Primary_Camera}}MP Primary Camera</li>
+                    <li>{{mobile.Secondary_Camera}}MP secondary Camera</li>
+                    <li>{{mobile.ROM}}GB ROM</li>
+                    <li>{{mobile.Battery}}mAh Battery</li>
+                    <li>{{mobile.Screen}} inch screen</li>
+                    <li>{{mobile.Display}} Display</li>
+                    <li>Qualcomm Snapdragon {{mobile.Processor}} Processor</li>
+                    <li>{{mobile.Warranty}} year(s) Warranty</li>
+                    <li>{{mobile.Price}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

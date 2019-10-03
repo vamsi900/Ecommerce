@@ -1,0 +1,26 @@
+img{
+    height: 200px;
+    width: 150px;
+}
+
+.card{
+    padding: 20px;
+}
+
+.relevance{
+    font-size: 14px;
+    color: #157BFF;
+    border-bottom: 3px solid #157BFF;
+}
+
+.lowtohigh{
+    font-size: 14px;
+    color: #157BFF;
+    border-bottom: 3px solid #157BFF;
+}
+
+.hightolow{
+    font-size: 14px;
+    color: #157BFF;
+    border-bottom: 3px solid #157BFF;
+}

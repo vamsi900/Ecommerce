@@ -1,0 +1,31 @@
+/* searchbar css */
+.searchContainer {
+    display: inline-flex;
+    flex: 1 1 300px;
+    max-width: 400px;
+    position: relative;
+    left: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .searchIcon {
+    padding: 0.5rem;
+    padding-top: 12px;
+    background-color: whitesmoke;
+  }
+  
+  .searchBox {
+    border: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    flex: 1;
+  }
+  
+  .searchButton {
+    background: #157BFF;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0;
+  }
