@@ -7,20 +7,14 @@ img{
     padding: 20px;
 }
 
-.relevance{
+#relevance{
     font-size: 14px;
-    color: #157BFF;
-    border-bottom: 3px solid #157BFF;
 }
 
-.lowtohigh{
+#lowtohigh{
     font-size: 14px;
-    color: #157BFF;
-    border-bottom: 3px solid #157BFF;
 }
 
-.hightolow{
+#hightolow{
     font-size: 14px;
-    color: #157BFF;
-    border-bottom: 3px solid #157BFF;
 }

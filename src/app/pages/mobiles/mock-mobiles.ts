@@ -4,7 +4,7 @@ export let MOBILES = [
         "Name": "OnePlus 7 pro",
         "Brand": "OnePlus",
         "RAM": 8,
-        "Primary_Camera": 48 + 12 + 8,
+        "Primary_Camera": '48 + 12 + 8',
         "Secondary_Camera": 16,
         "ROM": 128,
         "Battery": 3750,
@@ -18,11 +18,11 @@ export let MOBILES = [
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "Name": "Redmi Note 7S",
         "Brand": "Redmi",
         "RAM": 3,
-        "Primary_Camera": 48 + 8,
+        "Primary_Camera": '48 + 8',
         "Secondary_Camera": 8,
         "ROM": 32,
         "Battery": 4000,
@@ -36,11 +36,11 @@ export let MOBILES = [
         ]
     },
     {
-        "id": 1,
+        "id": 3,
         "Name": "Realme XT",
         "Brand": "Realme",
         "RAM": 6,
-        "Primary_Camera": 48 + 8 + 2 + 2,
+        "Primary_Camera": '48 + 8 + 2 + 2',
         "Secondary_Camera": 32,
         "ROM": 64,
         "Battery": 5000,
@@ -54,11 +54,11 @@ export let MOBILES = [
         ]
     },
     {
-        "id": 1,
+        "id": 4,
         "Name": "Redmi Note 7 Pro",
         "Brand": "Redmi",
         "RAM": 4,
-        "Primary_Camera": 48 + 12,
+        "Primary_Camera": '48 + 12',
         "Secondary_Camera": 16,
         "ROM": 64,
         "Battery": 4100,

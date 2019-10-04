@@ -29,3 +29,13 @@
     padding: 0.5rem;
     border-radius: 0;
   }
+
+  .cart-btn{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .badge{
+    margin-top: 5px;
+    margin-left: 3px;
+  }

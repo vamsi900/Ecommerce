@@ -1,7 +1,8 @@
-<div *ngIf="selection">
+<div *ngIf="selection" class="container">
+    <span *ngFor="let image of selection.images">
+    <img src="{{image.img}}">
+    </span>
 
-    <img src="{{selection.img}}">
-    
     <b>{{selection.Name}}</b>
     <li>{{selection.RAM}}GB RAM</li>
     <li>{{selection.Primary_Camera}}MP Primary Camera</li>
@@ -12,8 +13,9 @@
     <li>{{selection.Display}} Display</li>
     <li>Qualcomm Snapdragon {{selection.Processor}} Processor</li>
     <li>{{selection.Warranty}} year(s) Warranty</li>
-    <li>{{selection.Price}}</li>
+    <li>Rs.{{selection.Price}}</li>
+
+    <button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
+    <button class="btn btn-danger">Buy Now</button>
 </div>
 
-<button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
-<button class="btn btn-danger">Buy Now</button>
