@@ -26,6 +26,9 @@ import { MobilesDetailsComponent } from './pages/mobiles-details/mobiles-details
 import { ClothingDetailsComponent } from './pages/clothing-details/clothing-details.component';
 import { GroceriesDetailsComponent } from './pages/groceries-details/groceries-details.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { CartComponent } from './pages/cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,MatInputModule,
+    AppRoutingModule,MatInputModule,InfiniteScrollModule,NgxSpinnerModule,HttpClientModule,
     BrowserAnimationsModule,ReactiveFormsModule,MatIconModule,
     MatStepperModule,FormsModule,MatFormFieldModule,MatButtonModule,MatSliderModule,MatCheckboxModule,
     MatExpansionModule,

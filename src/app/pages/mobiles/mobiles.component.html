@@ -10,9 +10,9 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="row">
-                        <mat-checkbox type="checkbox" [(ngModel)]="CheckBox" (change)="toggle($event)" class="col-12">3 GB</mat-checkbox>
+                        <mat-checkbox class="col-12">3 GB</mat-checkbox>
                         <mat-checkbox class="col-12">4 GB</mat-checkbox>
-                        <mat-checkbox class="col-12">6 GB</mat-checkbox>
+                        <mat-checkbox type="checkbox" [(ngModel)]="CheckBox" (change)="toggle($event)" class="col-12">6 GB</mat-checkbox>
                     </div>
                 </mat-expansion-panel>
 
@@ -36,9 +36,9 @@
                             BATTERY CAPACITY
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <mat-checkbox type="checkbox" [(ngModel)]="CheckBox" (change)="toggle1($event)">3000 - 4000 mAh</mat-checkbox>
-                    <mat-checkbox>4000 - 5000 mAh</mat-checkbox>
-                    <mat-checkbox>5000 mAh & Above</mat-checkbox>
+                    <mat-checkbox type="checkbox" [(ngModel)]="CheckBox1" (change)="toggle1($event)" class="col-12">3000 - 4000 mAh</mat-checkbox>
+                    <mat-checkbox class="col-12">4000 - 5000 mAh</mat-checkbox>
+                    <mat-checkbox class="col-12">5000 mAh & Above</mat-checkbox>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
@@ -52,32 +52,7 @@
                 </div>
             </div>
             
-            <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword" (click)="chooseMobile(mobile)">
-                <div class="row">
-                    <span *ngFor="let image of mobile.images">
-                        <img src="{{image.img}}">
-                    </span>
-                    
-                    <ul>
-                    <b>{{mobile.Name}}</b>
-                    <li>{{mobile.RAM}}GB RAM</li>
-                    <li>{{mobile.Primary_Camera}} MP Primary Camera</li>
-                    <li>{{mobile.Secondary_Camera}}MP secondary Camera</li>
-                    <li>{{mobile.ROM}}GB ROM</li>
-                    <li>{{mobile.Battery}}mAh Battery</li>
-                    <li>{{mobile.Screen}} inch screen</li>
-                    <li>{{mobile.Display}} Display</li>
-                    <li>Qualcomm Snapdragon {{mobile.Processor}} Processor</li>
-                    <li>{{mobile.Warranty}} year(s) Warranty</li>
-                    </ul>
-
-                    <span>
-                        <h5>Rs.{{mobile.Price}}</h5>
-                    </span>
-                </div>
-            </div>
-
-            <div *ngIf="CheckBox == true">
+            <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
                 <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword" (click)="chooseMobile(mobile)">
                     <div class="row">
                         <span *ngFor="let image of mobile.images">
@@ -96,10 +71,22 @@
                         <li>Qualcomm Snapdragon {{mobile.Processor}} Processor</li>
                         <li>{{mobile.Warranty}} year(s) Warranty</li>
                         </ul>
-    
+
                         <span>
                             <h5>Rs.{{mobile.Price}}</h5>
                         </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 p-5">
+                        <ngx-spinner
+                            bdOpacity = 0.9
+                            bdColor = ""
+                            size = "default"
+                            color = "#581f87"
+                            type = "ball-pulse-sync"
+                            [fullScreen] = "false">
+                        </ngx-spinner>
                     </div>
                 </div>
             </div>

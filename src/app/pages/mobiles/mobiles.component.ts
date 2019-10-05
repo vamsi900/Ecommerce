@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MobileService } from './mobile.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-mobiles',
@@ -9,11 +11,18 @@ import { Router } from '@angular/router';
 })
 export class MobilesComponent implements OnInit {
   mobiles: any;
-  CheckBox = false;
+  CheckBox: boolean;
+  CheckBox1: boolean;
   public tableSelect:any="1";
   RAMSorted6: any;
-  constructor(private mobileService: MobileService, private router: Router) { 
+  array: any;
+  array1: any;
+  originalArray: any;
+  notEmptyPost = true;
+  notscrolly = true;
+  constructor(private mobileService: MobileService, private router: Router, private http: HttpClient, private spinner: NgxSpinnerService) { 
     this.mobiles = this.mobileService.getAll();
+    this.originalArray = this.mobiles;
   }
 
   ngOnInit() {
@@ -23,6 +32,22 @@ export class MobilesComponent implements OnInit {
   chooseMobile(mobile) {
     this.mobileService.setSelection(mobile);
     this.router.navigate(['mobiles-details']);
+  }
+
+  onScroll(){
+    if(this.notscrolly && this.notEmptyPost){
+      this.spinner.show();
+      this.notscrolly = false;
+      this.loadNextData();
+    }
+  }
+
+  loadNextData(){
+    const lastMobile = this.mobiles[this.mobiles.length - 1];
+    const lastMobileId = lastMobile.id;
+    const dataToSend = new FormData();
+    dataToSend.append('id', lastMobileId);
+    
   }
 
   relevance(){
@@ -91,16 +116,18 @@ export class MobilesComponent implements OnInit {
       });
     // }
   }
-
+  
   toggle(e){
     if(this.CheckBox == true){
       console.log("checked")
-      this.mobiles.filter((a) => {
+      this.array = this.mobiles.filter((a) => {
         return a.RAM >= 6
       })
+      this.mobiles = this.array;
     }
     else if(this.CheckBox == false){
       console.log("unchecked")
+      this.mobiles = this.originalArray;
     }
     else{
       console.log('error');
@@ -108,20 +135,20 @@ export class MobilesComponent implements OnInit {
   }
 
   toggle1(e){
-    if(this.CheckBox == true){
+    if(this.CheckBox1 == true){
       console.log("checked")
-      this.mobiles.sort((a,b) => {
-        if(a.Battery>b.Battery){
-        return 1;
-          }
-        else if(a.Battery<b.Battery){
-        return -1;
-          }
-          else
-          return 0;
+      this.array1 = this.mobiles.filter((a) => {
+        return a.Battery >= 3000 && a.Battery <=4000;
         });
-    } else {
-      console.log("unchecked");
+        console.log(this.array1);
+        this.mobiles = this.array1;
+    }
+    else if(this.CheckBox1 == false){
+      console.log("unchecked")
+      this.mobiles = this.originalArray;
+    }
+    else{
+      console.log('error');
     }
   }
 
