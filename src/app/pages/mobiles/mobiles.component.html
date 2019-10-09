@@ -55,8 +55,8 @@
             <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
                 <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword" (click)="chooseMobile(mobile)">
                     <div class="row">
-                        <span *ngFor="let image of mobile.images">
-                            <img src="{{image.img}}">
+                        <span>
+                            <img src="{{mobile.cover}}">
                         </span>
                         
                         <ul>

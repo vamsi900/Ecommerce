@@ -63,6 +63,8 @@ export class MobilesComponent implements OnInit {
 
     document.getElementById("hightolow").style.color="black";
     document.getElementById("hightolow").style.borderBottom= "";
+
+    this.originalArray;
   }
 
   lowtohigh(){

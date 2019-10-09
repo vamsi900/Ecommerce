@@ -1,4 +1,8 @@
+.col-lg-6{
+    border: 1px solid black;
+}
+
 img{
-    height: 200px;
-    width: 150px;
+    width: 300px;
+    height: 400px;
 }

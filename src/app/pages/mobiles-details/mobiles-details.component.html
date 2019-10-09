@@ -1,43 +1,29 @@
 <div *ngIf="selection" class="container">
-    <span *ngFor="let image of selection.images">
-    <img src="{{image.img}}">
-    </span>
-
-    <b>{{selection.Name}}</b>
-    <li>{{selection.RAM}}GB RAM</li>
-    <li>{{selection.Primary_Camera}}MP Primary Camera</li>
-    <li>{{selection.Secondary_Camera}}MP secondary Camera</li>
-    <li>{{selection.ROM}}GB ROM</li>
-    <li>{{selection.Battery}}mAh Battery</li>
-    <li>{{selection.Screen}} inch screen</li>
-    <li>{{selection.Display}} Display</li>
-    <li>Qualcomm Snapdragon {{selection.Processor}} Processor</li>
-    <li>{{selection.Warranty}} year(s) Warranty</li>
-    <li>Rs.{{selection.Price}}</li>
-
-    <button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
-    <button class="btn btn-danger">Buy Now</button>
-</div>
-
-
-<div *ngIf="addToCart" aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-    <!-- Position it -->
-    <div style="position: absolute; top: 0; right: 0;">
-  
-      <!-- Then put toasts within -->
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-          <img src="..." class="rounded mr-2" alt="...">
-          <strong class="mr-auto">Bootstrap</strong>
-          <small class="text-muted">just now</small>
-          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body">
-          Product added to cart.
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <carousel [noPause]="false" [noWrap]="true" [interval]="500">
+        <slide *ngFor="let image of selection.images">
+          <img src="{{image.img}}" alt="slides">
+        </slide>
+      </carousel>
     </div>
+
+    <div class="col-lg-6">
+      <b>{{selection.Name}}</b>
+      <li>{{selection.RAM}}GB RAM</li>
+      <li>{{selection.Primary_Camera}}MP Primary Camera</li>
+      <li>{{selection.Secondary_Camera}}MP secondary Camera</li>
+      <li>{{selection.ROM}}GB ROM</li>
+      <li>{{selection.Battery}}mAh Battery</li>
+      <li>{{selection.Screen}} inch screen</li>
+      <li>{{selection.Display}} Display</li>
+      <li>Qualcomm Snapdragon {{selection.Processor}} Processor</li>
+      <li>{{selection.Warranty}} year(s) Warranty</li>
+      <li>Rs.{{selection.Price}}</li>
+  
+      <button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
+      <button class="btn btn-danger">Buy Now</button>
+    </div>
+  </div>
 </div>
 

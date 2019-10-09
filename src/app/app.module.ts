@@ -29,6 +29,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,ReactiveFormsModule,MatIconModule,
     MatStepperModule,FormsModule,MatFormFieldModule,MatButtonModule,MatSliderModule,MatCheckboxModule,
     MatExpansionModule,
+    CarouselModule.forRoot(),
+    TypeaheadModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

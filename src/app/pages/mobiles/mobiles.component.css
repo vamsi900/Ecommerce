@@ -11,10 +11,22 @@ img{
     font-size: 14px;
 }
 
+#relevance:hover{
+    cursor: pointer;
+}
+
 #lowtohigh{
     font-size: 14px;
 }
 
+#lowtohigh:hover{
+    cursor: pointer;
+}
+
 #hightolow{
     font-size: 14px;
+}
+
+#hightolow:hover{
+    cursor: pointer;
 }

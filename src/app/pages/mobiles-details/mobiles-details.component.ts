@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MobileService } from '../mobiles/mobile.service';
 import { CartService } from '../../cart.service';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
 @Component({
   selector: 'app-mobiles-details',
   templateUrl: './mobiles-details.component.html',
