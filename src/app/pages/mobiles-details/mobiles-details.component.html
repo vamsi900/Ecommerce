@@ -21,8 +21,20 @@
       <li>{{selection.Warranty}} year(s) Warranty</li>
       <li>Rs.{{selection.Price}}</li>
   
-      <button class="btn btn-primary" (click)="addToCart(selection)">Add to Cart</button>
+      <button class="btn btn-primary" (click)="addToCart(selection)">{{buttonName}}</button>
       <button class="btn btn-danger">Buy Now</button>
+      <br>
+      <br>
+      <span style="padding:15px;">
+        <form #form="ngForm" (submit)="pincodeCheck(form)">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Enter Pincode" type="text" name="pincode" [(ngModel)]="pincode" (keypress)="keyPress($event)" minlength=6 maxlength=6 required autocomplete="off">
+          </mat-form-field>
+          <button class="btn btn-info" [disabled]="!form.valid" type="submit" style="margin-left: 10px;">Check</button>
+          <small *ngIf="this.value == true">Delivery takes 3-5 business days.</small>
+          <small *ngIf="this.value == false">Not deliverable to this location.</small>
+        </form>
+      </span>
     </div>
   </div>
 </div>

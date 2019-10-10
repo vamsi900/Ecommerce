@@ -31,6 +31,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
     MobilesDetailsComponent,
     ClothingDetailsComponent,
     GroceriesDetailsComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

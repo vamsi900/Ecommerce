@@ -3,6 +3,7 @@ import { MobileService } from './mobile.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn  } from '@angular/forms';
 
 @Component({
   selector: 'app-mobiles',
@@ -34,21 +35,22 @@ export class MobilesComponent implements OnInit {
     this.router.navigate(['mobiles-details']);
   }
 
-  onScroll(){
-    if(this.notscrolly && this.notEmptyPost){
-      this.spinner.show();
-      this.notscrolly = false;
-      this.loadNextData();
-    }
-  }
+  // onScroll(){
+  //   if(this.notscrolly && this.notEmptyPost){
+  //     this.spinner.show();
+  //     this.notscrolly = false;
+  //     this.loadNextData();
+  //   }
+  // }
 
-  loadNextData(){
-    const lastMobile = this.mobiles[this.mobiles.length - 1];
-    const lastMobileId = lastMobile.id;
-    const dataToSend = new FormData();
-    dataToSend.append('id', lastMobileId);
+  // loadNextData(){
+  //   const lastMobile = this.mobiles[this.mobiles.length - 1];
+  //   const lastMobileId = lastMobile.id;
+  //   const dataToSend = new FormData();
+  //   dataToSend.append('id', lastMobileId);
     
-  }
+  // }
+
 
   relevance(){
     this.tableSelect="1";
@@ -63,8 +65,6 @@ export class MobilesComponent implements OnInit {
 
     document.getElementById("hightolow").style.color="black";
     document.getElementById("hightolow").style.borderBottom= "";
-
-    this.originalArray;
   }
 
   lowtohigh(){
@@ -129,7 +129,6 @@ export class MobilesComponent implements OnInit {
     }
     else if(this.CheckBox == false){
       console.log("unchecked")
-      this.mobiles = this.originalArray;
     }
     else{
       console.log('error');
@@ -142,12 +141,10 @@ export class MobilesComponent implements OnInit {
       this.array1 = this.mobiles.filter((a) => {
         return a.Battery >= 3000 && a.Battery <=4000;
         });
-        console.log(this.array1);
         this.mobiles = this.array1;
     }
     else if(this.CheckBox1 == false){
       console.log("unchecked")
-      this.mobiles = this.originalArray;
     }
     else{
       console.log('error');

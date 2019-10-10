@@ -10,9 +10,9 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class="row">
-                        <mat-checkbox class="col-12">3 GB</mat-checkbox>
-                        <mat-checkbox class="col-12">4 GB</mat-checkbox>
-                        <mat-checkbox type="checkbox" [(ngModel)]="CheckBox" (change)="toggle($event)" class="col-12">6 GB</mat-checkbox>
+                        <mat-checkbox class="col-12" value="3">3 GB</mat-checkbox>
+                        <mat-checkbox class="col-12" value="4">4 GB</mat-checkbox>
+                        <mat-checkbox type="checkbox" [(ngModel)]="CheckBox" (change)="toggle($event)" class="col-12" value="6">6 GB</mat-checkbox>
                     </div>
                 </mat-expansion-panel>
 
@@ -52,11 +52,11 @@
                 </div>
             </div>
             
-            <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+            <!-- <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"> -->
                 <div class="card" *ngFor="let mobile of mobiles | search : searchKeyword" (click)="chooseMobile(mobile)">
                     <div class="row">
                         <span>
-                            <img src="{{mobile.cover}}">
+                            <img src="{{mobile.Cover}}">
                         </span>
                         
                         <ul>
@@ -89,7 +89,7 @@
                         </ngx-spinner>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 <!-- </div> -->

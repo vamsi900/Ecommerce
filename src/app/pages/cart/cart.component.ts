@@ -27,11 +27,11 @@ export class CartComponent implements OnInit {
         selected[obj.id] = {...obj, count: 1};
       }
     }
-    this.selectedItems = items;
-    console.log(this.selectedItems);
-    // this.selectedItems = Object.keys(selected).map(key => selected[key])
-    //  console.log('Items: ', this.selectedItems);
-    //  this.total = items.reduce((a,b) => a + (b.count * b.Price), 0);
+    // this.selectedItems = items;
+    // console.log(this.selectedItems);
+    this.selectedItems = Object.keys(selected).map(key => selected[key])
+     console.log('Items: ', this.selectedItems);
+     this.total = this.selectedItems.reduce((a,b) => a + (b.count * b.Price), 0);
    }
 
 }

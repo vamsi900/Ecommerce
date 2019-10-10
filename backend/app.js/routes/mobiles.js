@@ -6,11 +6,11 @@ router.post('/postMobile', function(req, res, next) {
 
     var mobile = new Mobile(req.body)
     
-    asset.save((err,data) => {
+    mobile.save((err,data) => {
         if(err){
             res.send(err);
         } else {
-            res.send({'asset' : data});
+            res.send({'mobile' : data});
         }
     })
     });
@@ -18,7 +18,7 @@ router.post('/postMobile', function(req, res, next) {
 
 router.get('/getMobile', function(req, res,){ 
 
-    Asset.find({},function (err,data){
+    Mobile.find({},function (err,data){
         if (err) {
             res.json({err});
             }
