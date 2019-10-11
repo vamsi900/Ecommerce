@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-mobile-accessories',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mobile-accessories.component.css']
 })
 export class MobileAccessoriesComponent implements OnInit {
-
-  constructor() { }
-
+  toss: any;
+  constructor(private api: ApiService) { }
+  data: any;
   ngOnInit() {
+    
+  }
+
+  getData(){
+    this.api.getData().subscribe(data => {
+      this.toss = data;
+      console.log("hello",this.toss)
+    });
   }
 
 }

@@ -1,1 +1,8 @@
 <p>mobile-accessories works!</p>
+
+
+<button (click)="getData()">FLIP THE COIN</button>
+
+<div *ngIf="toss">
+    {{toss.outcome}}
+</div>
